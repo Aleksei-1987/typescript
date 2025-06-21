@@ -12,10 +12,7 @@ export default class Cart {
   }
 
   removeById(id: number): void {
-    const indexToRemove = this._items.findIndex((item) => item.id === id);
-    if (indexToRemove !== -1) {
-      this._items.splice(indexToRemove, 1);
-    }
+    this._items = this._items.filter((item) => item.id !== id);
   }
 
   calculateTotalCost(): number {
